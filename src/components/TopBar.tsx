@@ -12,9 +12,9 @@ export default function TopBar() {
         {/* Heading */}
         <span className="my-auto mx-5 font-mono flex-1">karthik kalyanam</span>
         {/* Menu */}
-        <ul className="flex flex-row gap-5 my-auto mx-5 font-mono">
+        <ul className="flex flex-row gap-5 my-auto mx-5 font-mono drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
           <li>
-            <a href="/">home</a>
+            <a href="/portfolio">home</a>
           </li>
           <li>
             <a

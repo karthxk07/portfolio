@@ -8,10 +8,12 @@ export default () => {
   const theme = React.useContext(ThemeContext);
   const [aboutVisible, setAboutVisible] = React.useState(false);
   const observer = new IntersectionObserver(
-    (entries) => {
+    (entries, observer) => {
+      console.log(entries[0]);
       setAboutVisible(entries[0].isIntersecting);
+      entries[0].isIntersecting && observer.unobserve(entries[0].target);
     },
-    { threshold: 0.75 }
+    { threshold: 0.6 }
   );
   React.useEffect(() => {
     observer.observe(aboutRef.current as any);
@@ -22,22 +24,20 @@ export default () => {
       <div
         className={` ${
           theme === "light" ? "dark" : "light"
-        } flex flex-row    overflow-hidden`}
+        } flex flex-row    overflow-hidden h-screen items-center`}
         ref={aboutRef}
       >
-        <div className="w-1/4">
+        <div className="w-2/6">
           <img
             src="assets\aboutme.jpg"
             alt="About me"
-            className={`h-80 mx-auto my-5 rounded-3xl  object-scale-down object-bottom ${
-              aboutVisible
-                ? `translate-y-0 opacity-100`
-                : `translate-y-10 opacity-0`
+            className={`h-full mx-auto my-5 rounded-3xl  object-scale-down object-bottom ${
+              aboutVisible ? ` opacity-100` : ` opacity-0`
             } transition-all duration-500`}
           />
         </div>
         <div
-          className={`w-3/4 p-10 flex flex-col ${
+          className={`w-4/6 p-10 flex flex-col ${
             aboutVisible
               ? `translate-y-0 opacity-100`
               : `translate-y-10 opacity-0`
