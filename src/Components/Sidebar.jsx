@@ -17,11 +17,11 @@ export default () => {
   return (
     <>
       <div
-        className=" fixed end-0 top-1/2 -translate-y-1/2 z-10 translate-x-full h-full w-40 bg-gradient-to-b from-violet-700/40 to-pink-500/40 transition-all duration-300 ease-in-out backdrop-blur-md "
+        className=" fixed end-0 top-1/2 -translate-y-1/2 z-10 translate-x-full rounded-2xl h-[97%] w-40 bg-gradient-to-b from-violet-600/40 to-pink-700/40 transition-all duration-300 ease-in-out backdrop-blur-md "
         ref={sidebarRef}
         onMouseLeave={handleToggle}
       >
-        <div className="relative flex flex-col justify-center items-center w-full h-full  font-semibold">
+        <div className="relative flex flex-col justify-center items-center w-full h-full  text-white font-semibold">
           {menuItems.map((item, index) => (
             <div
               key={index}
@@ -33,7 +33,7 @@ export default () => {
             </div>
           ))}
           {hoveredItem && (
-            <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2  text-white -z-50">
+            <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2  text-black -z-50">
               <div className="flex text-6xl">
                 <div>
                   <p
@@ -51,7 +51,7 @@ export default () => {
           )}
         </div>
       </div>
-      <div className="fixed end-0 z-50  top-0 p-7 ">
+      <div className="fixed end-0 z-50  top-0 m-7 ">
         <div
           className="relative w-5 h-5 cursor-pointer  group "
           onMouseEnter={handleToggle}

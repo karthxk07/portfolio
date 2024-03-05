@@ -45,9 +45,6 @@ const GradientText = ({ roles }) => {
       <div className="my-10 w-[90%] cursor-default">
         <div className="relative text-8xl font-bold mb-8 ">
           <span>Karthik Kalyanam.</span>
-          <span className="absolute font-bold  inset-0 w-0 hover:w-full  bg-clip-text transition duration-500  text-transparent opacity-0 hover:opacity-100 ease-in-out bg-gradient-to-r from-purple-700 to-pink-600 ">
-            Karthik Kalyanam.
-          </span>
         </div>
         <p className="text-3xl font-semibold transition duration-75 ease-in-out">
           I am a{" "}
