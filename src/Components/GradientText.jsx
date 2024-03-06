@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const icons = [
   "react",
@@ -25,6 +26,7 @@ const icons = [
 ];
 
 const GradientText = ({ roles }) => {
+  const textRef = useRef();
   const [index, setIndex] = useState(0);
   const [role, setRole] = useState(roles[0]);
 
@@ -40,10 +42,19 @@ const GradientText = ({ roles }) => {
     setRole(roles[index]);
   }, [index, roles]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      textRef.current.style.opacity = 1;
+    }, 10);
+  }, []);
+
   return (
-    <div className="flex flex-col  justify-center pt-16 p-10 h-screen">
-      <div className="my-10 w-[90%] cursor-default">
-        <div className="relative text-7xl font-semibold ">
+    <div className="flex flex-col  justify-center  p-10 h-screen">
+      <div
+        className="opacity-0 transition duration-700 ease-in-out mt-10  w-[90%] cursor-default"
+        ref={textRef}
+      >
+        <div className=" relative text-7xl font-semibold ">
           <span>Karthik Kalyanam.</span>
         </div>
         <p className="text-2xl font-semibold transition duration-75 ease-in-out">
@@ -53,6 +64,25 @@ const GradientText = ({ roles }) => {
           </span>
         </p>
       </div>
+      <p class="mt-3 mb-16 flex flex-row gap-x-5">
+        <span className="flex flex-row space-x-3 text-3xl">
+          <a
+            href="https://www.linkedin.com/in/karthik-kalyanam-53571b254/"
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/karthxk07"
+            target="_blank"
+            class="text-black hover:text-stone-600"
+          >
+            <FaGithub />
+          </a>
+        </span>
+      </p>
+
       <div className=" grid grid-cols-11 w-[80%] gap-x-3 gap-y-3 ">
         {icons.map((icon) => (
           <img

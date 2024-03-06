@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import styles from "./ProjectDisplay.module.css";
 
 const projects = [
   {
     title: "The Art of SSB",
-    description:
-      "Empower your SSB test preparation with our comprehensive online platform, offering practice tests and expert guidance.",
+    description: "Empower your SSB test preparation with our online platform .",
     imageUrl: "/github/theartofssb.png",
     tags: ["React", "Tailwind", "Creative"],
     demoUrl: "http://theartofssb.in",
@@ -18,14 +19,7 @@ const projects = [
     demoUrl: "https://github.com/karthxk07/Speech-to-morse",
     githubUrl: "https://github.com/karthxk07/Speech-to-morse",
   },
-  {
-    title: "Ongaku",
-    description: "An online playlist sharing platform",
-    imageUrl: "/github/ongaku.png",
-    tags: ["React", "Tailwind", "Creative"],
-    demoUrl: "https://karthxk07.github.io/ongaku/",
-    githubUrl: "https://github.com/karthxk07/ongaku",
-  },
+
   {
     title: "Online Notepad",
     description:
@@ -55,25 +49,29 @@ const projects = [
 ];
 
 const ProjectDisplay = () => {
+  const containerRef = useRef();
+  const objectRef = useRef();
+
   return (
-    <div className="px-10  w-full py-12 bg-purple-950 text-pink-500 ">
-      <h2 className="text-6xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-pink-600">
+    <div className=" relative px-10  w-full py-12 bg-purple-950 text-pink-500 overflow-clip ">
+      <h2 className="text-6xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r  from-purple-800 to-pink-600">
         Creative Showcase
       </h2>
       <p className="text-center text-xl text-white mb-10">
         Discover a collection of innovative projects showcasing my skills in Web
         development and more.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 my-7">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border border-gray-300  bg-white p-4  rounded-lg flex flex-col justify-between"
+            className=" shadow-inner  bg-white p-4  rounded-2xl flex flex-col justify-between"
           >
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="mb-2 rounded-lg w-full  object-contain flex-grow "
+              className="mb-2 rounded-lg w-full  object-scale-down flex-grow "
             />
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
             <p className="text-black text-sm mb-2">{project.description}</p>
@@ -81,7 +79,7 @@ const ProjectDisplay = () => {
               {project.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-blue-500 text-white rounded-full px-2 py-1 text-xs font-semibold mr-2 mb-1"
+                  className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white rounded-full px-2 py-1 text-xs font-semibold mr-2 mb-1"
                 >
                   {tag}
                 </span>
@@ -106,6 +104,11 @@ const ProjectDisplay = () => {
           </div>
         ))}
       </div>
+      <a href="http://github.com/karthxk07" target="_blank">
+        <div className="inline-flex gap-3 text-lg text-white cursor-pointer absolute end-0 bottom-0 m-5">
+          More on <FaGithub className="text-2xl text-white" />
+        </div>
+      </a>
     </div>
   );
 };
