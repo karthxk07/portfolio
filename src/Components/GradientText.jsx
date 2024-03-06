@@ -49,7 +49,7 @@ const GradientText = ({ roles }) => {
   }, []);
 
   return (
-    <div className="flex flex-col  justify-center  p-10 h-screen">
+    <div className="flex flex-col  justify-start mt-24  p-10 h-screen">
       <div
         className="opacity-0 transition duration-700 ease-in-out mt-10  w-[90%] cursor-default"
         ref={textRef}

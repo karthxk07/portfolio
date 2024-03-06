@@ -43,7 +43,7 @@ export default () => {
               <img
                 src="/bitmoji.png"
                 alt=""
-                className=" w-full"
+                className=" h-full object-cover"
                 ref={bitmojiRef}
               />
             </div>
