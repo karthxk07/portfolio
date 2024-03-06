@@ -64,11 +64,11 @@ const ProjectDisplay = () => {
         Discover a collection of innovative projects showcasing my skills in Web
         development and more.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border border-gray-300  bg-white p-4 rounded-lg flex flex-col justify-between"
+            className="border border-gray-300  bg-white p-4  rounded-lg flex flex-col justify-between"
           >
             <img
               src={project.imageUrl}
