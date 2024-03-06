@@ -23,7 +23,7 @@ function App() {
       <Layout />
       <div
         ref={cursorFollowerRef}
-        className="backdrop-invert fixed transition  duration-200 ease-in rounded-full z-100 aspect-square h-12  "
+        className="backdrop-invert fixed transition -translate-x-2 translate-y-3 duration-200 ease-in rounded-full z-100 aspect-square h-12  "
       ></div>
     </>
   );
