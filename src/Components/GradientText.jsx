@@ -41,12 +41,12 @@ const GradientText = ({ roles }) => {
   }, [index, roles]);
 
   return (
-    <div className="flex flex-col  justify-start pt-16 p-10 h-screen">
+    <div className="flex flex-col  justify-center pt-16 p-10 h-screen">
       <div className="my-10 w-[90%] cursor-default">
-        <div className="relative text-8xl font-bold mb-8 ">
+        <div className="relative text-7xl font-semibold ">
           <span>Karthik Kalyanam.</span>
         </div>
-        <p className="text-3xl font-semibold transition duration-75 ease-in-out">
+        <p className="text-2xl font-semibold transition duration-75 ease-in-out">
           I am a{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500">
             {role}
