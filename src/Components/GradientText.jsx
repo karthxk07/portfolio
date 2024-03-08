@@ -55,11 +55,13 @@ const GradientText = ({ roles }) => {
         ref={textRef}
       >
         <div className=" relative text-7xl font-semibold ">
-          <span>Karthik Kalyanam.</span>
+          <span>
+            <span className="text-purple-700">Karthik </span>Kalyanam.
+          </span>
         </div>
         <p className="text-2xl font-semibold transition duration-75 ease-in-out">
           I am a{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-pink-500">
             {role}
           </span>
         </p>

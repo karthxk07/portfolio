@@ -34,16 +34,22 @@ export default () => {
     },
   ];
 
+  useEffect(() => {
+    setTimeout(() => {
+      bitmojiRef.current.classList.remove("blur-sm");
+    }, 100);
+  }, []);
+
   return (
     <>
       <div className="flex flex-col">
-        <div className="w-full h-screen  flex flex-row">
-          <div className=" w-fit mx-20 h-full  p-10">
-            <div className=" flex justify-center items-center h-full w-fit rounded-2xl backdrop-blur-2xl text-white overflow-hidden p-5">
+        <div className="w-full bg-gradient-to-b from-black to-purple-950 h-screen text-white  flex flex-row">
+          <div className=" w-fit mx-32 h-full  ">
+            <div className=" flex  drop-shadow-2xl justify-center items-center h-full w-fit rounded-2xl backdrop-blur-2xl text-white  ">
               <img
                 src="/bitmoji.png"
                 alt=""
-                className=" h-full object-cover"
+                className=" ws-full object-contain blur-sm transition-all  duration-500 ease-in"
                 ref={bitmojiRef}
               />
             </div>

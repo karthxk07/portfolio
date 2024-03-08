@@ -54,10 +54,10 @@ const ProjectDisplay = () => {
 
   return (
     <div className=" relative px-10  w-full py-12 bg-purple-950 text-pink-500 overflow-clip ">
-      <h2 className="text-6xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r  from-purple-800 to-pink-600">
+      <h2 className="text-5xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r  from-purple-700 to-pink-700">
         Creative Showcase
       </h2>
-      <p className="text-center text-xl text-white mb-10">
+      <p className="text-center text-lg text-white mb-10">
         Discover a collection of innovative projects showcasing my skills in Web
         development and more.
       </p>
