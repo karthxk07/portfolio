@@ -57,16 +57,16 @@ const ProjectDisplay = () => {
       <h2 className="text-5xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r  from-purple-700 to-pink-700">
         Creative Showcase
       </h2>
-      <p className="text-center text-lg text-white mb-10">
+      <p className="text-center text-lg text-stone-300 mb-10">
         Discover a collection of innovative projects showcasing my skills in Web
         development and more.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 my-7">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 my-7">
         {projects.map((project, index) => (
           <div
             key={index}
-            className=" shadow-inner  bg-white p-4  rounded-2xl flex flex-col justify-between"
+            className=" shadow-2xl outline-stone-200 outline  outline-2 drop-shadow-2xl shadow-fuchsia-500  bg-white p-4  rounded-2xl flex flex-col justify-between"
           >
             <img
               src={project.imageUrl}
@@ -105,8 +105,8 @@ const ProjectDisplay = () => {
         ))}
       </div>
       <a href="http://github.com/karthxk07" target="_blank">
-        <div className="inline-flex gap-3 text-lg text-white cursor-pointer absolute end-0 bottom-0 m-5">
-          More on <FaGithub className="text-2xl text-white" />
+        <div className="inline-flex gap-3 duration-75 transition ease-in-out hover:text-white text-lg text-stone-300 cursor-pointer absolute end-0 bottom-0 m-5">
+          More on <FaGithub className="text-2xl " />
         </div>
       </a>
     </div>

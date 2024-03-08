@@ -42,9 +42,9 @@ export default () => {
 
   return (
     <>
-      <div className="flex flex-col">
-        <div className="w-full bg-gradient-to-b from-black to-purple-950 h-screen text-white  flex flex-row">
-          <div className=" w-fit mx-32 h-full  ">
+      <div className="flex flex-col bg-purple-950">
+        <div className="w-full bg-gradient-to-b from-black to-purple-950 min-h-screen text-white items-center flex lg:flex-row md:flex-col flex-col">
+          <div className=" w-fit lg:mx-32 mx-auto my-8  h-full   ">
             <div className=" flex  drop-shadow-2xl justify-center items-center h-full w-fit rounded-2xl backdrop-blur-2xl text-white  ">
               <img
                 src="/bitmoji.png"
@@ -64,7 +64,8 @@ export default () => {
             />
           </div>
         </div>
-        <div className="h-screen w-full">
+        <div className="w-full h-[2px]  my-3 bg-gradient-to-r from-transparent to-transparent via-stone-500"></div>
+        <div className="h-fit w-full">
           <ProjectDisplay />
         </div>
       </div>

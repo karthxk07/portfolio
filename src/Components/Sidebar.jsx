@@ -57,10 +57,13 @@ export default () => {
           onMouseEnter={handleToggle}
         >
           {/* Three lines */}
-          <div className="absolute left-1/2 top-1/2 transform  -translate-x-1/2 -translate-y-1/2 w-8">
-            <div className="h-1 w-1/3 bg-gray-800 my-1 transition-all duration-300 group-hover:w-full"></div>
-            <div className="h-1 w-2/3 bg-gray-800 my-1 transition-all duration-300 group-hover:w-full"></div>
-            <div className="h-1 bg-gray-800 my-1 transition-all duration-300 "></div>
+          <div
+            className="absolute left-1/2 top-1/2 transform  -translate-x-1/2 -translate-y-1/2 w-8 "
+            onClick={handleToggle}
+          >
+            <div className="h-1 w-1/3 bg-stone-300 hover:bg-white my-1 transition-all duration-300 group-hover:w-full"></div>
+            <div className="h-1 w-2/3 bg-stone-300 hover:bg-white my-1 transition-all duration-300 group-hover:w-full"></div>
+            <div className="h-1       bg-stone-300 hover:bg-white my-1 transition-all duration-300 "></div>
           </div>
         </div>
       </div>
