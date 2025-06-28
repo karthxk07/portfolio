@@ -35,12 +35,8 @@ function App() {
   };
 
   useEffect(() => {
-    Promise.all(imagesToPreload.map(preloadImage))
-      .then(() => setIsLoading(false))
-      .catch((err) => {
-        console.error("Error preloading images", err);
-        setIsLoading(false); // Even if some fail, hide loader
-      });
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
   
 
