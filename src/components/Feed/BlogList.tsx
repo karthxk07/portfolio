@@ -98,7 +98,6 @@ const BlogList = ({ limit }: BlogListProps) => {
                                     <ActionButton
                                         icon={<FaShare />}
                                         label="Share"
-                                        postId={post.id}
                                         onClick={(e) => {
                                             e.preventDefault();
                                             const url = `${window.location.origin}/blog/${post.id}`;
