@@ -19,22 +19,22 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="h-screen w-full flex relative overflow-hidden bg-[#121212]">
+    <div className="h-auto w-full flex relative overflow-hidden bg-[#121212] mb-4 rounded-xl border border-[#333]">
       {/* Horizontal gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/80 via-transparent to-transparent pointer-events-none" />
 
       {/* Vertical gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#333333] pointer-events-none" />
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full h-full px-8 md:px-16 py-12">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full h-full px-8 py-12">
         {/* Text section */}
         <div className="">
           <div className="text-right mr-28 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-400 bg-clip-text text-transparent">
-            <p className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 text-right">
+            <p className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-right">
               {displayedText}
             </p>
             <motion.p
-              className="text-lg md:text-2xl text-gray-300 mb-4"
+              className="text-lg text-gray-300 mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
@@ -46,8 +46,8 @@ const Banner = () => {
             {/* Social Icons */}
             <motion.div
               className="flex justify-end space-x-4 mt-7 "
-              initial={{ opacity: 0}}
-              animate={{ opacity: 1}}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 1.5 }}
             >
               <a
