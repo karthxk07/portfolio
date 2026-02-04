@@ -1,0 +1,45 @@
+name: Build & Publish Dist
+
+on:
+  push:
+    branches: ["v2"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      # Switch to dist branch
+      - name: Checkout dist branch
+        run: |
+          git fetch
+          git checkout dist || git checkout --orphan dist
+          git rm -rf .
+
+      # Copy build output (change `build` if your output folder is different)
+      - name: Copy build artifacts
+        run: |
+          cp -r build/* .
+
+      - name: Commit & push to dist
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Update dist from master" || echo "No changes"
+          git push origin dist
